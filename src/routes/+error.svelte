@@ -20,5 +20,4 @@
 				targetUrl="/",
 				title="Go Home"
 			)
-				| Go Home
-</template>
+				| Go Home</template>
