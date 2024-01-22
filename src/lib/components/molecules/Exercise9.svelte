@@ -16,7 +16,7 @@
 
 <template lang="pug">
 	h2 Exercise 9
-		span.text-20.font-semibold.ml-4 Updating arrays
+		span.text-20.font-semibold.ml-4 Reactivity / Updating arrays
 	p.text-24.py-6 { numbers.join(" + ") } = { sum }
 
 	.button-box.grid.grid-cols-2.gap-4.max-w-sm

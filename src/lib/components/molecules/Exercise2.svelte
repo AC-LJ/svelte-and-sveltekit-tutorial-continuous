@@ -9,9 +9,10 @@
 	p.py-4 This image's source is a URL string assigned to a variable and passed into the img element's src attribute.
 	p Also, the Svelte shorthand syntax apparently works for the src attribute in this dev stack.
 
-	img.pt-6(
-		alt="Randomly selected from loremflickr.",
-		height="360",
-		width="640",
-		{src}
-	)</template>
+	.image-container.mt-6.w-fit.rounded-md.overflow-hidden.border-white
+		img(
+			alt="Randomly selected from loremflickr.",
+			height="360",
+			width="640",
+			{src}
+		)</template>

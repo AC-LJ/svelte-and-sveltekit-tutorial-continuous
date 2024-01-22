@@ -12,7 +12,7 @@
 
 <template lang="pug">
 	h2 Exercise 6
-		span.text-20.font-semibold.ml-4 Reactivity
+		span.text-20.font-semibold.ml-4 Reactivity / Assignments
 	.button-box.grid.grid-cols-2.gap-4.mt-6.max-w-sm
 		ButtonGeneric1(
 			buttonContent!="Clicked { count } { count===1 ? 'time' : 'times'}",

@@ -16,6 +16,8 @@
 	import Exercise9 from "$molecules/Exercise9.svelte";
 	import Exercise10 from "$molecules/Exercise10.svelte";
 	import Exercise11 from "$molecules/Exercise11.svelte";
+	import Exercise12 from "$molecules/Exercise12.svelte";
+	import Exercise13Thru15 from "$components/molecules/Exercise13Thru15.svelte";
 
 	// functions
 
@@ -90,7 +92,49 @@
 			Exercise11
 
 		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+			Exercise12
+
 		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+			Exercise13Thru15
+
+		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+		//- 	Exercise14
+
+		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+		//- 	Exercise2
+
+		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+		//- 	Exercise3
+
+		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+		//- 	Exercise4
+
+		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+		//- 	Exercise5
+
+		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+		//- 	Exercise6
+
+		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+		//- 	Exercise7
+
+		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+		//- 	Exercise8
+
+		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+		//- 	Exercise9
+
+		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+		//- 	Exercise10
+
+		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+		//- 	Exercise11
+
+		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+		//- 	Exercise12
+
+		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+		//- 	Exercise13
 
 	footer
 

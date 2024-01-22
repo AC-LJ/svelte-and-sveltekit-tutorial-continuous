@@ -18,7 +18,7 @@
 
 <template lang="pug">
 	h2 Exercise 8
-		span.text-20.font-semibold.ml-4 Statements
+		span.text-20.font-semibold.ml-4 Reactivity / Statements
 
 	p.text-20.py-8 Open your browser console to see what this exercise is about.
 

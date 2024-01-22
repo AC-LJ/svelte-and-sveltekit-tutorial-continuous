@@ -8,7 +8,6 @@ An <a> styled to look like a button.
 <script lang="ts">
 	export let targetUrl = "#";
 	export let title = "";
-	console.log("button link instantiated");
 </script>
 
 <template lang="pug">

@@ -13,7 +13,7 @@
 
 <template lang="pug">
 	h2 Exercise 7
-		span.text-20.font-semibold.ml-4 Declarations
+		span.text-20.font-semibold.ml-4 Reactivity / Declarations
 
 	.button-box.grid.grid-cols-2.gap-4.mt-6.max-w-sm
 		ButtonGeneric1(
