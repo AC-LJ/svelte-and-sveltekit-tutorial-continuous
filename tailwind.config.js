@@ -6,8 +6,11 @@ export default {
 		extend: {
 			colors: {
 				// custom rules for starter web page, remove these for your own project
-				primary: "#142239",
-				accent: "#ebf92f",
+				primary: "#92C5FD",
+				eerie: "#171717",
+				parchment: "#F4ECD6",
+				engineering: "#C03221",
+				viridian: "#3F826D",
 			},
 			fontSize: {
 				6: "6px",

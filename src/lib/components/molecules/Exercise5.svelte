@@ -5,5 +5,6 @@
 
 <template lang="pug">
 	h2 Exercise 5
-		span.text-20.font-semibold.ml-4 HTML tags
+	.headline.text-20.font-semibold.ml-4.mt-2
+		p HTML tags
 	p.text-20.py-8 {  @html string  }</template>

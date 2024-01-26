@@ -13,5 +13,6 @@
 
 <template lang="pug">
 	h2 Exercise 11
-		span.text-20.font-semibold.ml-4 Default values
+	.headline.text-20.font-semibold.ml-4.mt-2
+		p Default values
 	EditorsNote</template>

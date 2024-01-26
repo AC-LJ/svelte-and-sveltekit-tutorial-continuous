@@ -10,22 +10,19 @@
 	const addNumber = () => (numbers = [...numbers, numbers.length + 1]);
 	const reset = () => (numbers = [1, 2, 3, 4]);
 
-	// functions called at setup
+	// function calls at setup
 	reset();
 </script>
 
 <template lang="pug">
 	h2 Exercise 9
-		span.text-20.font-semibold.ml-4 Reactivity / Updating arrays
+	.headline.text-20.font-semibold.ml-4.mt-2
+		p Reactivity / Updating arrays
 	p.text-24.py-6 { numbers.join(" + ") } = { sum }
 
 	.button-box.grid.grid-cols-2.gap-4.max-w-sm
-		ButtonGeneric1(
-			buttonContent!="Add a number",
-			onClick!="{ addNumber }"
-		)
-		ButtonGeneric1(
-			buttonContent="Reset",
-			onClick!="{ reset }"
-		)
-	span</template>
+		ButtonGeneric1(onClick!="{ addNumber }")
+			p Add a number
+
+		ButtonGeneric1(onClick!="{ reset }")
+			p Reset</template>

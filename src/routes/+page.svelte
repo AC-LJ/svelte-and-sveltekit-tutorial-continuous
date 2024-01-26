@@ -18,15 +18,20 @@
 	import Exercise11 from "$molecules/Exercise11.svelte";
 	import Exercise12 from "$molecules/Exercise12.svelte";
 	import Exercise13Thru15 from "$components/molecules/Exercise13Thru15.svelte";
+	import Exercise16 from "$molecules/Exercise16.svelte";
+	import Exercise17 from "$molecules/Exercise17.svelte";
+	import Exercise18 from "$molecules/Exercise18.svelte";
+	import Exercise19thru20 from "$components/molecules/Exercise19thru20.svelte";
+	import Exercise21 from "$molecules/Exercise21.svelte";
 
 	// functions
 
 	function* backgroundRotator() {
 		const colors = [
-			"bg-red-100",
-			"bg-blue-100",
-			"bg-orange-100",
-			"bg-purple-100",
+			"bg-parchment",
+			"bg-engineering",
+			"bg-viridian",
+			"bg-primary",
 		];
 
 		let index = -1;
@@ -97,20 +102,20 @@
 		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
 			Exercise13Thru15
 
-		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-		//- 	Exercise14
+		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+			Exercise16
 
-		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-		//- 	Exercise2
+		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+			Exercise17
 
-		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-		//- 	Exercise3
+		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+			Exercise18
 
-		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-		//- 	Exercise4
+		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+			Exercise19thru20
 
-		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-		//- 	Exercise5
+		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+			Exercise21
 
 		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
 		//- 	Exercise6

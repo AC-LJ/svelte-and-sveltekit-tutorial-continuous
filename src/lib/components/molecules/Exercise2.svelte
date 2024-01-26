@@ -5,7 +5,8 @@
 
 <template lang="pug">
 	h2 Exercise 2
-		span.text-20.font-semibold.ml-4 Dynamic attributes
+	.headline.text-20.font-semibold.ml-4.mt-2
+		p Dynamic attributes
 	p.py-4 This image's source is a URL string assigned to a variable and passed into the img element's src attribute.
 	p Also, the Svelte shorthand syntax apparently works for the src attribute in this dev stack.
 

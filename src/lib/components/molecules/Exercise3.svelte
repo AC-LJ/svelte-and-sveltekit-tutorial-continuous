@@ -3,7 +3,8 @@
 
 <template lang="pug">
 	h2 Exercise 3
-		span.text-20.font-semibold.ml-4 Styling
+	.headline.text-20.font-semibold.ml-4.mt-2
+		p.override Styling
 	p The styles applied to these paragraphs are scoped to this component only.
 	p It must be the case that TW classes are applied before traditionally declared styles because they cannot be used to override same.
 	p(class="override") This paragraph is unaffected due to an "override" class selector included in the style element.</template>
@@ -19,7 +20,22 @@
 
 	.override {
 		color: black;
-		font-family: sans-serif;
-		font-size: 1.1em;
+		font-family:
+			ui-sans-serif,
+			system-ui,
+			-apple-system,
+			BlinkMacSystemFont,
+			"Segoe UI",
+			Roboto,
+			"Helvetica Neue",
+			Arial,
+			"Noto Sans",
+			sans-serif,
+			"Apple Color Emoji",
+			"Segoe UI Emoji",
+			"Segoe UI Symbol",
+			"Noto Color Emoji";
+		font-size: 20px;
+		font-weight: 600;
 	}
 </style>

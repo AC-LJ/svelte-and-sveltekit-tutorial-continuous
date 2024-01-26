@@ -13,7 +13,10 @@
 
 <template lang="pug">
 	h2 Exercise 12
-		span.text-20.font-semibold.ml-4 Spread props: There is no syntax to enable the use of spread props in this stack.
+	.headline.text-20.font-semibold.ml-4.mt-2
+		p Spread props
+	p.mt-6 The spread props syntax is unavailable in this stack. Enter props one at a time.
+
 	Ex12PackageInfo(
 		name!="{ pkg.name }",
 		speed!="{ pkg.speed }",

@@ -13,16 +13,14 @@
 
 <template lang="pug">
 	h2 Exercise 7
-		span.text-20.font-semibold.ml-4 Reactivity / Declarations
+	.headline.text-20.font-semibold.ml-4.mt-2
+		p Reactivity / Declarations
 
 	.button-box.grid.grid-cols-2.gap-4.mt-6.max-w-sm
-		ButtonGeneric1(
-			buttonContent!="Clicked { count } { count===1 ? 'time' : 'times'}",
-			onClick!="{ increment }"
-		)
-		ButtonGeneric1(
-			buttonContent="Clear the count",
-			onClick!="{ clear }"
-		)
+		ButtonGeneric1(onClick!="{ increment }")
+			p Clicked { count } { count === 1 ? "time" : "times" }
+
+		ButtonGeneric1(onClick!="{ clear }")
+			p Clear the count
 
 	p.text-20.py-8 { count } doubled is { doubled }</template>

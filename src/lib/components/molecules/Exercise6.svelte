@@ -12,13 +12,12 @@
 
 <template lang="pug">
 	h2 Exercise 6
-		span.text-20.font-semibold.ml-4 Reactivity / Assignments
+		.headline.text-20.font-semibold.ml-4.mt-2
+			p Reactivity / Assignments
+
 	.button-box.grid.grid-cols-2.gap-4.mt-6.max-w-sm
-		ButtonGeneric1(
-			buttonContent!="Clicked { count } { count===1 ? 'time' : 'times'}",
-			onClick!="{ increment }"
-		)
-		ButtonGeneric1(
-			buttonContent="Clear the count",
-			onClick!="{ clear }"
-		)</template>
+		ButtonGeneric1(onClick!="{ increment }")
+			p Clicked { count } { count === 1 ? "time" : "times" }
+
+		ButtonGeneric1(onClick!="{ clear }")
+			p Clear the count</template>

@@ -18,16 +18,14 @@
 
 <template lang="pug">
 	h2 Exercise 8
-		span.text-20.font-semibold.ml-4 Reactivity / Statements
+	.headline.text-20.font-semibold.ml-4.mt-2
+		p Reactivity / Statements
 
 	p.text-20.py-8 Open your browser console to see what this exercise is about.
 
 	.button-box.grid.grid-cols-2.gap-4.max-w-sm
-		ButtonGeneric1(
-			buttonContent!="Clicked { count } { count===1 ? 'time' : 'times'}",
-			onClick!="{ increment }"
-		)
-		ButtonGeneric1(
-			buttonContent="Clear the count",
-			onClick!="{ clear }"
-		)</template>
+		ButtonGeneric1(onClick!="{ increment }")
+			p Clicked { count } { count === 1 ? "time" : "times" }
+
+		ButtonGeneric1(onClick!="{ clear }")
+			p Clear the count</template>

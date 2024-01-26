@@ -13,5 +13,6 @@
 
 <template lang="pug">
 	h2 Exercise 10
-		span.text-20.font-semibold.ml-4 Declaring props
+	.headline.text-20.font-semibold.ml-4.mt-2
+		p Declaring props
 	EditorsNote(noteContent!="{ msg }")</template>

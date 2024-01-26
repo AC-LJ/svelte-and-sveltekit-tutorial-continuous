@@ -3,7 +3,7 @@
 </script>
 
 <template lang="pug">
-	section(class!="{ backgroundColor } min-h-24 py-8 px-12")
+	section.text-eerie.bg-opacity-40(class!="{ backgroundColor } min-h-24 py-8 px-12")
 		slot
 
 	span</template>

@@ -6,6 +6,7 @@
 
 <template lang="pug">
 	h2 Exercise 1
-		span.text-20.font-semibold.ml-4 Your first component (Dynamic content)
+	.headline.text-20.font-semibold.ml-4.mt-2
+		p Your first component (Dynamic content)
 	p.py-6 { content }
 	span</template>
