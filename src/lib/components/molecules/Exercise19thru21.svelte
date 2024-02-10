@@ -14,9 +14,9 @@
 </script>
 
 <template lang="pug">
-	h2 Exercises 19 and 20
+	h2 Exercises 19 thru 21
 	.headline.text-20.font-semibold.ml-4.mt-2
-		p Events / DOM Events
+		p Events / DOM events / Inline handlers
 
 	.mouse-tracking-field.grid.grid-cols-1.grid-rows-2.bg-eerie.bg-opacity-80.text-parchment.aspect-square.h-60.rounded-lg.mt-6(
 		on:mouseleave!="{ () => (m = { x: 0, y: 0 }) }",

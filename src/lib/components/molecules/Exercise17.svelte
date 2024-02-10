@@ -56,13 +56,13 @@
 		.explainer.mt-4.text-center.text-14
 			p.font-bold Without key
 			p.font-semibold (unintended behavior)
-			.things-container.mt-3.h-60.w-52.p-6.bg-eerie.bg-opacity-75.border-2.border-parchment.border-opacity-70.rounded-lg.text-24.shadow-neutral-700.shadow-lg.text-parchment
+			.things-container.mt-3.h-52.max-w-60.px-3.py-5.bg-eerie.bg-opacity-75.border-2.border-parchment.border-opacity-70.rounded-lg.shadow-neutral-700.shadow-lg.text-parchment.text-22.text-left
 				+each('things as thing')
 					Thing(name!="{ thing.name }")
 
 		.explainer.mt-4.text-center.text-14
 			p.font-bold With key
 			p.font-semibold (works as intended)
-			.things-container.mt-3.h-60.w-52.p-6.bg-eerie.bg-opacity-75.border-2.border-parchment.border-opacity-70.rounded-lg.text-24.shadow-neutral-700.shadow-lg.text-parchment
+			.things-container.mt-3.h-52.max-w-60.px-3.py-5.bg-eerie.bg-opacity-75.border-2.border-parchment.border-opacity-70.rounded-lg.shadow-neutral-700.shadow-lg.text-parchment.text-22.text-left
 				+each('things as thing (thing.id)')
 					Thing(name!="{ thing.name }")</template>

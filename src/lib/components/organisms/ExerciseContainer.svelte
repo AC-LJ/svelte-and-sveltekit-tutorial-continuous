@@ -3,7 +3,7 @@
 </script>
 
 <template lang="pug">
-	section.text-eerie.bg-opacity-40(class!="{ backgroundColor } min-h-24 py-8 px-12")
-		slot
-
-	span</template>
+	.exercise-container.text-eerie.bg-opacity-40.border.border-neutral-400.rounded-xl.shadow-lg(
+		class!="{ backgroundColor } min-h-24 py-8 px-12"
+	)
+		slot</template>

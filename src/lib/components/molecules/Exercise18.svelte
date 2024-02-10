@@ -7,6 +7,7 @@
 
 	// components
 	import ButtonGeneric1 from "$atoms/ButtonGeneric1.svelte";
+	import Graf from "$atoms/Ex18PayloadGraf.svelte";
 
 	// variables
 	let promise = getWord();
@@ -26,8 +27,8 @@
 		ButtonGeneric1(onClick!="{ handleClick }")
 			p Get a new word
 		+await('promise')
-			p waiting...
+			Graf(textContent="waiting...")
 			+then('promise')
-				p { promise }
+				Graf(textContent!="{ promise }")
 			+catch('error')
-				p { error.message }</template>
+				Graf(textContent!="{ error.message }")</template>

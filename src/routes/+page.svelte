@@ -21,8 +21,9 @@
 	import Exercise16 from "$molecules/Exercise16.svelte";
 	import Exercise17 from "$molecules/Exercise17.svelte";
 	import Exercise18 from "$molecules/Exercise18.svelte";
-	import Exercise19thru20 from "$components/molecules/Exercise19thru20.svelte";
-	import Exercise21 from "$molecules/Exercise21.svelte";
+	import Exercise19thru21 from "$components/molecules/Exercise19thru21.svelte";
+	import Exercise22 from "$components/molecules/Exercise22.svelte";
+	import Exercise23 from "$molecules/Exercise23.svelte";
 
 	// functions
 
@@ -63,83 +64,86 @@
 	//- body
 	Header
 	main
-		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			Exercise1
+		.grid.grid-cols-1.gap-5.px-8.py-6.m-auto(
+			class="max-w-[1800px] lg:grid-cols-2 2xl:grid-cols-3"
+		)
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise1
 
-		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			Exercise2
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise2
 
-		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			Exercise3
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise3
 
-		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			Exercise4
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise4
 
-		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			Exercise5
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise5
 
-		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			Exercise6
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise6
 
-		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			Exercise7
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise7
 
-		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			Exercise8
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise8
 
-		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			Exercise9
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise9
 
-		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			Exercise10
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise10
 
-		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			Exercise11
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise11
 
-		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			Exercise12
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise12
 
-		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			Exercise13Thru15
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise13Thru15
 
-		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			Exercise16
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise16
 
-		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			Exercise17
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise17
 
-		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			Exercise18
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise18
 
-		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			Exercise19thru20
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise19thru21
 
-		ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			Exercise21
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise22
 
-		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-		//- 	Exercise6
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise23
 
-		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-		//- 	Exercise7
+			//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+			//- 	Exercise7
 
-		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-		//- 	Exercise8
+			//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+			//- 	Exercise8
 
-		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-		//- 	Exercise9
+			//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+			//- 	Exercise9
 
-		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-		//- 	Exercise10
+			//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+			//- 	Exercise10
 
-		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-		//- 	Exercise11
+			//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+			//- 	Exercise11
 
-		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-		//- 	Exercise12
+			//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+			//- 	Exercise12
 
-		//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-		//- 	Exercise13
+			//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+			//- 	Exercise13
 
 	footer
 
