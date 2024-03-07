@@ -1,4 +1,8 @@
 <script lang="ts">
+	import ExerciseHeader from "$atoms/ExerciseHeader.svelte";
+
+	// components
+	ExerciseHeader;
 	// variables
 	let m = { x: 0, y: 0 };
 
@@ -14,13 +18,17 @@
 </script>
 
 <template lang="pug">
-	h2 Exercises 19 thru 21
-	.headline.text-20.font-semibold.ml-4.mt-2
-		p Events / DOM events / Inline handlers
+	ExerciseHeader(
+		endNumber=21,
+		section="Events",
+		startNumber=19,
+		topic="DOM Events, Inline handlers"
+	)
 
 	.mouse-tracking-field.grid.grid-cols-1.grid-rows-2.bg-eerie.bg-opacity-80.text-parchment.aspect-square.h-60.rounded-lg.mt-6(
 		on:mouseleave!="{ () => (m = { x: 0, y: 0 }) }",
-		on:mousemove!="{ handleMove }"
+		on:mousemove!="{ handleMove }",
+		role="presentation"
 	)
 		.flex.p-1.justify-center.items-end
 			p Tracking mouse in field

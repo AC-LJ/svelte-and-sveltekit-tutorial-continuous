@@ -1,4 +1,7 @@
 <script lang="ts">
+	// components
+	import ExerciseHeader from "$atoms/ExerciseHeader.svelte";
+
 	// variables
 	let unclicked = true;
 	$: buttonText = unclicked ? "Click me!" : "Fun's over";
@@ -11,9 +14,11 @@
 </script>
 
 <template lang="pug">
-	h2 Exercise 22
-	.headline.text-20.font-semibold.ml-4.mt-2
-		p Event modifiers
+	ExerciseHeader(
+		section="Events",
+		startNumber=22,
+		topic="Event modifiers"
+	)
 
 	.button-box.grid.grid-cols-1.gap-4.mt-8.max-w-xs
 		button.py-2.px-3.border.border-neutral-700.rounded-lg(

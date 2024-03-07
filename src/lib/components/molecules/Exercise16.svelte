@@ -1,5 +1,6 @@
 <script lang="ts">
 	// components
+	import ExerciseHeader from "$atoms/ExerciseHeader.svelte";
 	import ButtonCustomizable1 from "$atoms/ButtonCustomizable1.svelte";
 
 	// variables
@@ -18,9 +19,11 @@
 </script>
 
 <template lang="pug">
-	h2 Exercise 16
-	.headline.text-20.font-semibold.ml-4.mt-2
-		p Logic / Each blocks
+	ExerciseHeader(
+		section="Logic",
+		startNumber=16,
+		topic="Each blocks"
+	)
 
 	.button-grid.grid.grid-cols-7.gap-2.p-4.mt-6.text-20.max-w-md
 		+each('colors as color, i')

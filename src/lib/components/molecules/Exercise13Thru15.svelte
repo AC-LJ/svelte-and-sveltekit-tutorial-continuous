@@ -1,5 +1,6 @@
 <script lang="ts">
 	// components
+	import ExerciseHeader from "$atoms/ExerciseHeader.svelte";
 	import ButtonGeneric1 from "$atoms/ButtonGeneric1.svelte";
 
 	// variables
@@ -21,9 +22,12 @@
 </script>
 
 <template lang="pug">
-	h2 Exercises 13 through 15
-	.headline.text-20.font-semibold.ml-4.mt-2
-		p Logic / If, elseif, and else blocks
+	ExerciseHeader(
+		endNumber=15,
+		section="Logic",
+		startNumber=13,
+		topic="If, elseif, and else blocks"
+	)
 
 	.button-box.grid.grid-cols-2.gap-4.mt-8.max-w-sm
 		ButtonGeneric1(onClick!="{ increment }")

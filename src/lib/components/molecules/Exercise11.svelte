@@ -1,5 +1,6 @@
 <script lang="ts">
 	// components
+	import ExerciseHeader from "$atoms/ExerciseHeader.svelte";
 	import EditorsNote from "$atoms/EditorsNote.svelte";
 
 	// variables
@@ -12,7 +13,10 @@
 </script>
 
 <template lang="pug">
-	h2 Exercise 11
-	.headline.text-20.font-semibold.ml-4.mt-2
-		p Default values
+	ExerciseHeader(
+		section="Props",
+		startNumber=11,
+		topic="Default values"
+	)
+
 	EditorsNote</template>

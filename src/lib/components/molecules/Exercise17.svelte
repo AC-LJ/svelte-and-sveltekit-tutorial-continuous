@@ -1,6 +1,6 @@
 <script lang="ts">
 	// components
-
+	import ExerciseHeader from "$atoms/ExerciseHeader.svelte";
 	import Thing from "$atoms/Ex17Thing.svelte";
 	import ButtonGeneric1 from "$atoms/ButtonGeneric1.svelte";
 
@@ -42,9 +42,11 @@
 </script>
 
 <template lang="pug">
-	h2 Exercise 17
-	.headline.text-20.font-semibold.ml-4.mt-2
-		p Logic / Keyed each blocks
+	ExerciseHeader(
+		section="Logic",
+		startNumber=17,
+		topic="Keyed each blocks"
+	)
 
 	.button-grid.grid.grid-cols-2.gap-4.mt-6.max-w-md
 		ButtonGeneric1(onClick!="{ handleClick }")
@@ -52,7 +54,7 @@
 
 		ButtonGeneric1(onClick!="{ reset }")
 			p Reset
-	.grid.grid-cols-2.gap-4.max-w-md
+	.grid.grid-cols-2.gap-4.mb-2.max-w-md
 		.explainer.mt-4.text-center.text-14
 			p.font-bold Without key
 			p.font-semibold (unintended behavior)

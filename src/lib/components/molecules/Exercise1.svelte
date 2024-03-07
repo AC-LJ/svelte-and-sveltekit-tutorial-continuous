@@ -1,12 +1,17 @@
 <script lang="ts">
+	// components
+	import ExerciseHeader from "$atoms/ExerciseHeader.svelte";
+
 	// variables
 	let content =
 		"This string is defined in a variable and passed to an <p> element in the template.";
 </script>
 
 <template lang="pug">
-	h2 Exercise 1
-	.headline.text-20.font-semibold.ml-4.mt-2
-		p Your first component (Dynamic content)
-	p.py-6 { content }
-	span</template>
+	ExerciseHeader(
+		section="Intro",
+		startNumber=1,
+		topic="Your first component (Dynamic content)"
+	)
+	.grid.grid-cols-1.my-6.content-middle.grow
+		p.text-24.justify-self-center.self-center.px-8 { content }</template>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	// components
+	import ExerciseHeader from "$atoms/ExerciseHeader.svelte";
 	import ButtonGeneric1 from "$atoms/ButtonGeneric1.svelte";
 
 	// variables
@@ -11,11 +12,13 @@
 </script>
 
 <template lang="pug">
-	h2 Exercise 6
-		.headline.text-20.font-semibold.ml-4.mt-2
-			p Reactivity / Assignments
+	ExerciseHeader(
+		section="Reactivity",
+		startNumber=6,
+		topic="Assignments"
+	)
 
-	.button-box.grid.grid-cols-2.gap-4.mt-6.max-w-sm
+	.button-box.grid.grid-cols-2.gap-4.grow.mt-4.items-center.mb-12.max-w-sm
 		ButtonGeneric1(onClick!="{ increment }")
 			p Clicked { count } { count === 1 ? "time" : "times" }
 

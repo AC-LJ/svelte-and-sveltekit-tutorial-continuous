@@ -1,5 +1,6 @@
 <script lang="ts">
 	// components
+	import ExerciseHeader from "$atoms/ExerciseHeader.svelte";
 	import Ex12PackageInfo from "$atoms/Ex12PackageInfo.svelte";
 
 	// variables
@@ -12,9 +13,12 @@
 </script>
 
 <template lang="pug">
-	h2 Exercise 12
-	.headline.text-20.font-semibold.ml-4.mt-2
-		p Spread props
+	ExerciseHeader(
+		section="Props",
+		startNumber=12,
+		topic="Spread props"
+	)
+
 	p.mt-6 The spread props syntax is unavailable in this stack. Enter props one at a time.
 
 	Ex12PackageInfo(

@@ -6,6 +6,7 @@
 	import { getWord } from "$utils/utils";
 
 	// components
+	import ExerciseHeader from "$atoms/ExerciseHeader.svelte";
 	import ButtonGeneric1 from "$atoms/ButtonGeneric1.svelte";
 	import Graf from "$atoms/Ex18PayloadGraf.svelte";
 
@@ -19,9 +20,11 @@
 </script>
 
 <template lang="pug">
-	h2 Exercise 18
-	.headline.text-20.font-semibold.ml-4.mt-2
-		p Logic / Await blocks
+	ExerciseHeader(
+		section="Logic",
+		startNumber=18,
+		topic="Await blocks"
+	)
 
 	.button-grid.grid.grid-cols-1.gap-4.mt-6.max-w-md
 		ButtonGeneric1(onClick!="{ handleClick }")

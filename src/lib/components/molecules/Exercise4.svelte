@@ -1,13 +1,17 @@
 <script lang="ts">
 	// components
+	import ExerciseHeader from "$atoms/ExerciseHeader.svelte";
 	import Ex4Nested from "$atoms/Ex4Nested.svelte";
 </script>
 
 <template lang="pug">
-	h2 Exercise 4
-	.headline.text-20.font-semibold.ml-4.mt-2
-		p.override Nested components
-	p.py-6 This is a paragraph in the parent component with styles applied in the parent component.
+	ExerciseHeader(
+		section="Intro",
+		startNumber=4,
+		topic="Nested components"
+	)
+
+	p.py-4 This is a paragraph in the parent component with styles applied in the parent component.
 	Ex4Nested</template>
 
 <style>
