@@ -14,7 +14,7 @@
 
 	// functions
 	function updateKioskOutput() {
-		if (flavours.length <= scoops) {
+		if (flavours.length <= scoops && flavours.length > 0) {
 			kioskOutput = `You have ordered ${scoops} ${
 				scoops === 1 ? "scoop" : "scoops"
 			} of ${formatter.format(flavours)}.`;
