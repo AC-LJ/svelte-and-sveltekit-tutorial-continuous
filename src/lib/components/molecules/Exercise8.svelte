@@ -21,7 +21,7 @@
 	ExerciseHeader(
 		section="Reactivity",
 		startNumber=8,
-		topics="Statements"
+		topic="Statements"
 	)
 
 	p.text-20.py-6 Open your browser console to see what this exercise is about.

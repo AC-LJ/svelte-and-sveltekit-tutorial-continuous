@@ -30,15 +30,17 @@
 	import Exercise27 from "$components/molecules/Exercise27.svelte";
 	import Exercise28 from "$components/molecules/Exercise28.svelte";
 	import Exercise29 from "$components/molecules/Exercise29.svelte";
+	import Exercise30 from "$components/molecules/Exercise30.svelte";
+	import Exercise30Riff from "$components/molecules/Exercise30Riff.svelte";
 
 	// functions
 
 	function* backgroundRotator() {
 		const colors = [
-			"bg-parchment",
 			"bg-engineering",
 			"bg-viridian",
 			"bg-primary",
+			"bg-parchment",
 		];
 
 		let index = -1;
@@ -148,11 +150,11 @@
 			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
 				Exercise29
 
-			//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			//- 	Exercise13
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise30
 
-			//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			//- 	Exercise11
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise30Riff
 
 			//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
 			//- 	Exercise12

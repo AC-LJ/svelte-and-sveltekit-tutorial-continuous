@@ -38,8 +38,8 @@
 	.scoop-count-grid.grid.grid-cols-1.gap-4.mt-6
 		h2.text-20.font-semibold Size
 		+each('[1, 2, 3] as number')
-			label
-				input.mr-3(
+			label.flex.gap-3
+				input(
 					bind:group!="{ scoops }",
 					name="scoops",
 					on:change!="{ updateKioskOutput }",
@@ -50,8 +50,8 @@
 	.flavour-options-grid.grid.grid-cols-1.gap-4.mt-6
 		h2.text-20.font-semibold Flavours
 		+each('["cookies and cream", "mint choc chip", "raspberry ripple"] as flavour')
-			label
-				input.mr-3(
+			label.flex.gap-3
+				input(
 					bind:group!="{ flavours }",
 					name="flavours",
 					on:change!="{ updateKioskOutput }",
@@ -59,4 +59,5 @@
 					value!="{ flavour }"
 				)
 				| { flavour }
+
 	p.mt-8.text-20 { kioskOutput }</template>
