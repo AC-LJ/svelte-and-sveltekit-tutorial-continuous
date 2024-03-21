@@ -2,17 +2,23 @@
 	// components
 	import ExerciseHeader from "$atoms/ExerciseHeader.svelte";
 	import ButtonGeneric1 from "$atoms/ButtonGeneric1.svelte";
-	import ButtonIceCream from "$atoms/ButtonIceCream.svelte";
+	import ButtonAddScoop from "$atoms/Ex30ButtonIceAddScoop.svelte";
 	import Ex30RiffScoop from "$atoms/Ex30RiffScoop.svelte";
 	import Ex30RiffCone from "$atoms/Ex30RiffCone.svelte";
+	import ButtonEat from "$atoms/Ex30ButtonEat.svelte";
 
 	// variables
 	let flavours: string[] = [];
-	let runningYOffset = 131;
+	let runningYOffset = 101;
 	let offsetCopy = runningYOffset;
 	let selections: {}[] = [];
 	let isToppled = false;
 	let isClearing = false;
+	let mouthOpen = true;
+
+	$: eatImage = mouthOpen
+		? "src/lib/assets/mouth-open.png"
+		: "src/lib/assets/mouth-closed.png";
 
 	// functions
 	function addScoop(event: PointerEvent) {
@@ -42,26 +48,44 @@
 	}
 
 	function topple() {
-		isToppled = true;
+		// changes the position and rotation of all onscreen scoops to simulate a topple
+		interface ScatterPattern {
+			shift: number;
+			rotation: number;
+		}
+
 		function randomHorizontal() {
+			// adds some horizontal jitter so the toppled scoop positions aren't exactly the same every time
+
 			return Math.ceil(Math.random() * 20);
 		}
 
 		function* shiftAndRollGen() {
-			const scatterPattern = [
-				-50, -240, 60, 90, 120, 200, 250, -10, -140, 150, -200, -320,
-			];
-			const rotationPattern = [
-				-102, -110, 90, 90, 90, 200, 90, 180, 0, 180, -90, 0,
+			// generates a pattern of horizontal shifts and rotations for the toppled scoops
+
+			const scatterPattern: ScatterPattern[] = [
+				{ shift: -50, rotation: -102 },
+				{ shift: -240, rotation: -110 },
+				{ shift: 60, rotation: 90 },
+				{ shift: 90, rotation: 90 },
+				{ shift: 120, rotation: 90 },
+				{ shift: 200, rotation: 200 },
+				{ shift: 250, rotation: 90 },
+				{ shift: -10, rotation: 180 },
+				{ shift: -140, rotation: 0 },
+				{ shift: 150, rotation: 180 },
+				{ shift: -200, rotation: -90 },
+				{ shift: -320, rotation: 0 },
 			];
 
+			isToppled = true;
+
 			while (true) {
-				for (let value of scatterPattern) {
+				for (let i = 0; i < scatterPattern.length; i++) {
 					yield [
-						([0, 1, 2, 3, 4, 5, 7].includes(scatterPattern.indexOf(value))
-							? 0
-							: randomHorizontal()) + value,
-						rotationPattern[scatterPattern.indexOf(value)],
+						([0, 1, 2, 3, 4, 5, 7].includes(i) ? 0 : randomHorizontal()) +
+							scatterPattern[i].shift,
+						scatterPattern[i].rotation,
 					];
 				}
 			}
@@ -82,20 +106,24 @@
 		selections = selections.map((selection) => {
 			return {
 				...selection,
-				yAdjustment: 232,
+				yAdjustment: 212,
 			};
 		});
 	}
 
 	function eat() {
+		// makes all onscreen scoops disappear in a whimsical fashion
+
 		isClearing = true;
 		const intervalId = setInterval(() => {
 			selections = selections.slice(0, -1);
+			mouthOpen = !mouthOpen;
 
 			if (selections.length === 0) {
 				clearInterval(intervalId); // Stop the interval when the array is empty
 				isToppled = false;
 				isClearing = false;
+				mouthOpen = true;
 			}
 		}, 210);
 		runningYOffset = offsetCopy;
@@ -122,15 +150,15 @@
 						p -O-
 						p.text-20 MATIC
 						p CONE BUILDER
-					ButtonIceCream(
+					ButtonAddScoop(
 						choice=0,
 						onClick!="{ addScoop }"
 					)
-					ButtonIceCream(
+					ButtonAddScoop(
 						choice=1,
 						onClick!="{ addScoop }"
 					)
-					ButtonIceCream(
+					ButtonAddScoop(
 						choice=2,
 						onClick!="{ addScoop }"
 					)
@@ -147,12 +175,17 @@
 				Ex30RiffCone
 
 				+if('selections.length > 0')
-					+if('!isToppled')
-						.absolute.bottom-6.bg-red.h-12.flex.flex-col
-							ButtonGeneric1(onClick!="{ eat }") Eat it!
-						+else
-							.absolute.bottom-6.bg-red.h-12.flex.flex-col.z-50
-								ButtonGeneric1(onClick!="{ eat }") EAT IT ANYWAY!</template>
+					.absolute.bottom-14.bg-red.h-12.flex.flex-col.z-50.text-18.font-semibold
+						+if('!isToppled')
+							ButtonEat(
+								buttonImage!="{ eatImage }",
+								onClick!="{ eat }"
+							) Eat it!
+							+else
+								ButtonEat(
+									buttonImage!="{ eatImage }",
+									onClick!="{ eat }"
+								) EAT IT ANYWAY!</template>
 
 <style lang="css">
 	.front-plate {

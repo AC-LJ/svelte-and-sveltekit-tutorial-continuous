@@ -4,7 +4,7 @@
 <template lang="pug">
 	.absolute(
 		class="h-[100%]",
-		style="top: 162px"
+		style="top: 132px"
 	)
 		img.object-cover(
 			class="h-[36%]",
