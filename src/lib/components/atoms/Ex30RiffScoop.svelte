@@ -7,19 +7,20 @@
 
 	// variables
 	const flavours = [
-		"src/lib/assets/cookies-and-cream-scoop.png",
-		"src/lib/assets/mint-choc-chip-scoop.png",
-		"src/lib/assets/raspberry-ripple-scoop.png",
+		"src/lib/assets/cookies-and-cream-scoop-regularized.png",
+		"src/lib/assets/mint-choc-chip-scoop-regularized.png",
+		"src/lib/assets/raspberry-ripple-scoop-regularized.png",
 	];
 
 	console.log("rotation:", typeof rotation, rotation);
 </script>
 
 <template lang="pug">
-	img.object-cover.absolute(
-		class=`h-[14.5%] z-20`,
+	img.object-contain.absolute(
+		class=`h-[15%] z-20`,
 		alt="A scoop of ice cream.",
-		height="100",
+		height="105",
+		width="120"
 		src!="{ flavours[flavourSelect] }",
 		style!="{ `transform: translate(${xAdjustment}px,${yAdjustment}px) rotate(${rotation}deg)` }"
 	)

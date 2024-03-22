@@ -7,11 +7,20 @@
 	import Ex30RiffCone from "$atoms/Ex30RiffCone.svelte";
 	import ButtonEat from "$atoms/Ex30ButtonEat.svelte";
 
+	// types
+	interface SelectionDetails {
+		scoopType: number;
+		yAdjustment: number;
+		xAdjustment: number;
+		rotation: number;
+	}
+
 	// variables
-	let flavours: string[] = [];
-	let runningYOffset = 101;
+	// let flavours: string[] = [];
+	let runningYOffset = 90;
+	let coneYOffset = runningYOffset + 36;
 	let offsetCopy = runningYOffset;
-	let selections: {}[] = [];
+	let selections: SelectionDetails[] = [];
 	let isToppled = false;
 	let isClearing = false;
 	let mouthOpen = true;
@@ -22,27 +31,52 @@
 
 	// functions
 	function addScoop(event: PointerEvent) {
+		// adds a scoop to the cone
+
+		function makeItTeeter() {
+			// adds a little horizontal jitter to the scoops so they don't stack perfectly
+			// returns a two-element array, with horizontal offset at [0] and rotation at index [1]
+			return [
+				Math.floor(Math.random() * 8 - 4),
+				Math.floor(Math.random() * 30 - 15),
+			];
+		}
+
 		if (!isToppled && !isClearing) {
+			// the "choice" variable is passed to Ex30RiffScoop.svelte to select a flavor by index of the "flavors" array found there
+			// 0 = cookies and cream, 1 = mint choc chip, 2 = raspberry ripple
 			let choice: number | undefined;
 			if (event.target) {
+				// grab the last character of the id of the clicked button, which is an integer
 				choice = parseInt((event.target as HTMLElement).id.slice(-1));
 			}
-			selections = [
-				...selections,
-				{
-					scoopType: choice,
-					yAdjustment: runningYOffset,
-					xAdjustment:
-						choice === 0
-							? -1 + Math.floor(Math.random() * 6 - 3)
-							: -2 + Math.floor(Math.random() * 6 - 3),
-					rotation:
-						choice === 0
-							? -30 + Math.floor(Math.random() * 30 - 15)
-							: 0 + Math.floor(Math.random() * 30 - 15),
-				},
-			];
-			runningYOffset -= 30;
+			// The first scoop always goes on straight, so we don't add placement jitter if the selections array is empty
+			// The part about "choice" is just to chill TypeScript out
+			if (choice !== undefined && selections.length === 0) {
+				selections = [
+					...selections,
+					{
+						scoopType: choice,
+						yAdjustment: runningYOffset,
+						xAdjustment: choice === 0 ? -1 : -2,
+						rotation: choice === 0 ? -15 : 0,
+					},
+				];
+			} else if (choice !== undefined) {
+				// If this scoop is being dropped on top of another scoop, we add the jitter
+				selections = [
+					...selections,
+					{
+						scoopType: choice,
+						yAdjustment: runningYOffset,
+						xAdjustment:
+							choice === 0 ? -1 + makeItTeeter()[0] : -2 + makeItTeeter()[0],
+						rotation:
+							choice === 0 ? -15 + makeItTeeter()[1] : 0 + makeItTeeter()[1],
+					},
+				];
+			}
+			runningYOffset -= 33;
 			if (selections.length === 12) topple();
 		}
 	}
@@ -114,19 +148,22 @@
 	function eat() {
 		// makes all onscreen scoops disappear in a whimsical fashion
 
-		isClearing = true;
-		const intervalId = setInterval(() => {
-			selections = selections.slice(0, -1);
-			mouthOpen = !mouthOpen;
+		if (!isClearing) {
+			isClearing = true;
+			mouthOpen = false;
+			const intervalId = setInterval(() => {
+				selections = selections.slice(0, -1);
+				mouthOpen = !mouthOpen;
 
-			if (selections.length === 0) {
-				clearInterval(intervalId); // Stop the interval when the array is empty
-				isToppled = false;
-				isClearing = false;
-				mouthOpen = true;
-			}
-		}, 210);
-		runningYOffset = offsetCopy;
+				if (selections.length === 0) {
+					clearInterval(intervalId); // Stop the interval when the array is empty
+					isToppled = false;
+					isClearing = false;
+					mouthOpen = true;
+				}
+			}, 210);
+			runningYOffset = offsetCopy;
+		}
 	}
 </script>
 
@@ -172,10 +209,10 @@
 						xAdjustment!="{ selection.xAdjustment }",
 						yAdjustment!="{ selection.yAdjustment }"
 					)
-				Ex30RiffCone
+				Ex30RiffCone(topOffset!="{ coneYOffset }")
 
 				+if('selections.length > 0')
-					.absolute.bottom-14.bg-red.h-12.flex.flex-col.z-50.text-18.font-semibold
+					.absolute.bottom-16.bg-red.h-12.flex.flex-col.z-50.text-16.font-semibold
 						+if('!isToppled')
 							ButtonEat(
 								buttonImage!="{ eatImage }",
@@ -185,7 +222,7 @@
 								ButtonEat(
 									buttonImage!="{ eatImage }",
 									onClick!="{ eat }"
-								) EAT IT ANYWAY!</template>
+								) IT'S STILL GOOD!</template>
 
 <style lang="css">
 	.front-plate {

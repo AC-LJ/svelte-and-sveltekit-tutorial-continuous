@@ -6,13 +6,15 @@
 </script>
 
 <template lang="pug">
-	button.rounded-lg.w-44.border.border-eerie.py-1.px-4.flex.flex-col.items-center(
-		class="hover:shadow-md hover:shadow-blue-400",
+	button.pb-3.pt-2.px-6.flex.flex-col.items-center.rounded-full.shadow-blue-500.shadow-md.border.border-blue-500.border-opacity-20(
+		class="active:bg-blue-100 hover:shadow-lg hover:shadow-blue-500 transition-shadow duration-150 ease-in-out",
 		on:click!="{ onClick }"
 	)
-		img.h-14(
+		img(
 			alt="A cartoon mouth",
-			src!="{ buttonImage }"
+			height="48",
+			src!="{ buttonImage }",
+			width="48"
 		)
 
 		slot</template>
