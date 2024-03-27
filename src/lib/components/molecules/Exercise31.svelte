@@ -36,9 +36,6 @@
 		) {
 			const sliceOne = text.slice(0, endPartOne);
 			const sliceTwo = text.slice(startPartTwo);
-			console.log("sliceOne:", sliceOne);
-			console.log("replacement:", replacement);
-			console.log("sliceTwo:", sliceTwo);
 
 			text = sliceOne + replacement + sliceTwo;
 		}
@@ -86,8 +83,6 @@
 		}
 
 		function parseLists() {
-			console.log("'Text' on entry to parseLists:", text);
-
 			const localReplacementKey: Record<string, string> = {
 				"\n-": "li",
 				"\n": "ul",
@@ -97,7 +92,6 @@
 
 			// First place the list item tags
 			const itemTermIndices = getTermIndices(text, "\n-");
-			// console.log("itemTermIndices:", itemTermIndices);
 			let runningDisplacement = 0;
 
 			for (let index of itemTermIndices) {
@@ -124,7 +118,7 @@
 			runningDisplacement = 0;
 
 			if (
-				!text.includes("<ul>") ||
+				(!text.includes("<ul>") && text.includes("<li>")) ||
 				text.indexOf("<ul>") > text.lastIndexOf("<li>")
 			) {
 				performReplacement("<ul>", text.indexOf("<li>"), text.indexOf("<li>"));
@@ -137,8 +131,6 @@
 			) {
 				text += "</li></ul>";
 			}
-
-			console.log("'Text' on exit from parseLists:", text);
 		}
 
 		function parseParagraphs() {}
