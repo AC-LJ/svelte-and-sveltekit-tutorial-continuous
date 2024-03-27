@@ -17,6 +17,7 @@
 	.image-container.mt-6.w-fit.rounded-md.overflow-hidden.border-white
 		img(
 			alt="Randomly selected from loremflickr.",
+			draggable="false",
 			height="360",
 			width="640",
 			{src}
