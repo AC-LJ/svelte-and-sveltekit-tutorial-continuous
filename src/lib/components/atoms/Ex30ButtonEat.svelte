@@ -12,6 +12,7 @@
 	)
 		img(
 			alt="A cartoon mouth",
+			draggable="false",
 			height="48",
 			src!="{ buttonImage }",
 			width="48"

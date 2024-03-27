@@ -12,16 +12,17 @@
 		"src/lib/assets/raspberry-ripple-scoop-regularized.png",
 	];
 
-	console.log("rotation:", typeof rotation, rotation);
+	// console.log("rotation:", typeof rotation, rotation);
 </script>
 
 <template lang="pug">
 	img.object-contain.absolute(
-		class=`h-[15%] z-20`,
 		alt="A scoop of ice cream.",
+		class=`h-[15%] w-fit z-20`,
+		draggable="false",
 		height="105",
-		width="120"
 		src!="{ flavours[flavourSelect] }",
 		style!="{ `transform: translate(${xAdjustment}px,${yAdjustment}px) rotate(${rotation}deg)` }"
+		width="120"
 	)
 </template>

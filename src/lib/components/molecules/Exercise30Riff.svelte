@@ -17,8 +17,8 @@
 
 	// variables
 	// let flavours: string[] = [];
-	let runningYOffset = 90;
-	let coneYOffset = runningYOffset + 36;
+	let runningYOffset = 88;
+	let coneYOffset = runningYOffset + 38;
 	let offsetCopy = runningYOffset;
 	let selections: SelectionDetails[] = [];
 	let isToppled = false;
@@ -58,7 +58,7 @@
 					{
 						scoopType: choice,
 						yAdjustment: runningYOffset,
-						xAdjustment: choice === 0 ? -1 : -2,
+						xAdjustment: choice === 0 ? -2 : -3,
 						rotation: choice === 0 ? -15 : 0,
 					},
 				];
