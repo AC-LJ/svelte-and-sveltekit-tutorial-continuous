@@ -22,6 +22,7 @@
 				px-3
 				rounded-lg
 				transition
+				w-full
 				`,
 		on:click!="{ onClick }"
 	)
