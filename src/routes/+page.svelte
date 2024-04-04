@@ -21,7 +21,7 @@
 	import Exercise16 from "$molecules/Exercise16.svelte";
 	import Exercise17 from "$molecules/Exercise17.svelte";
 	import Exercise18 from "$molecules/Exercise18.svelte";
-	import Exercise19thru21 from "$components/molecules/Exercise19thru21.svelte";
+	import Exercise19Thru21 from "$components/molecules/Exercise19Thru21.svelte";
 	import Exercise22 from "$components/molecules/Exercise22.svelte";
 	import Exercise23 from "$components/molecules/Exercise23A_Parent.svelte";
 	import Exercise24 from "$components/molecules/Exercise24A_Parent.svelte";
@@ -36,6 +36,8 @@
 	import Exercise32 from "$components/molecules/Exercise32.svelte";
 	import Exercise33 from "$components/molecules/Exercise33.svelte";
 	import Exercise34 from "$components/molecules/Exercise34.svelte";
+	import Exercise35Thru36A from "$components/molecules/Exercise35Thru36A.svelte";
+	import Exercise37Thru38 from "$components/molecules/Exercise37Thru38.svelte";
 
 	// functions
 
@@ -128,7 +130,7 @@
 				Exercise18
 
 			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise19thru21
+				Exercise19Thru21
 
 			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
 				Exercise22
@@ -172,11 +174,11 @@
 			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
 				Exercise34
 
-			//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			//- 	Exercise13
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise35Thru36A
 
-			//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			//- 	Exercise11
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise37Thru38
 
 			//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
 			//- 	Exercise12
