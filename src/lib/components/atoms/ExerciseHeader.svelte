@@ -5,7 +5,7 @@
 	export let topic: string;
 
 	function makeExerciseNumberString(start: number, end: number) {
-		return `Exercise ${
+		return `${startNumber === endNumber ? "Exercise" : "Exercises"} ${
 			start === end ? start : start.toString() + " thru " + end.toString()
 		}`;
 	}
