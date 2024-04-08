@@ -3,7 +3,7 @@
 	import ButtonGeneric1 from "$atoms/ButtonGeneric1.svelte";
 
 	// stores
-	import { count } from "$lib/stores/Exercise35Store";
+	import { count } from "$stores/exercise35thru36Store";
 
 	function increment() {
 		$count += 1;

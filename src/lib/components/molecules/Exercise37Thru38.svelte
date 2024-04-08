@@ -3,8 +3,8 @@
 	import ExerciseHeader from "$atoms/ExerciseHeader.svelte";
 
 	// stores
-	import { time } from "$stores/Exercise37Thru38Store";
-	import { elapsed } from "$stores/Exercise37Thru38Store";
+	import { time } from "$stores/exercise37Thru38Store";
+	import { elapsed } from "$stores/exercise37Thru38Store";
 
 	const formatter = new Intl.DateTimeFormat("en", {
 		hour12: true,

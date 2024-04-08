@@ -6,7 +6,7 @@
 	import Reset from "$components/molecules/Exercise35Thru36DReset.svelte";
 
 	// stores
-	import { count } from "$stores/Exercise35Store";
+	import { count } from "$stores/exercise35thru36Store";
 </script>
 
 <template lang="pug">
