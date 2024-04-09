@@ -9,9 +9,8 @@
 
 <template lang="pug">
 	ExerciseHeader(
-		endNumber=36,
 		section="Stores",
-		startNumber=35,
+		startNumber=39,
 		topic="Custom stores"
 	)
 
