@@ -39,6 +39,7 @@
 	import Exercise35Thru36A from "$components/molecules/Exercise35Thru36A.svelte";
 	import Exercise37Thru38 from "$components/molecules/Exercise37Thru38.svelte";
 	import Exercise39 from "$components/molecules/Exercise39.svelte";
+	import Exercise40 from "$components/molecules/Exercise40.svelte";
 
 	// functions
 
@@ -184,8 +185,8 @@
 			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
 				Exercise39
 
-			//- ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-			//- 	Exercise13
+			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+				Exercise40
 
 	footer
 
