@@ -41,6 +41,12 @@
 	import Exercise39 from "$components/molecules/Exercise39.svelte";
 	import Exercise40 from "$components/molecules/Exercise40.svelte";
 
+	// variables
+	const chapters = {
+		0: "basic",
+		1: "advanced",
+	};
+
 	// functions
 
 	function* backgroundRotator() {
@@ -81,7 +87,7 @@
 	Header
 	main
 		.grid.grid-cols-1.gap-5.px-8.py-6.m-auto(
-			class="max-w-[1800px] lg:grid-cols-2 2xl:grid-cols-3"
+			class="max-w-[1800px] lg:grid-cols-2 3xl:grid-cols-3"
 		)
 			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
 				Exercise1
