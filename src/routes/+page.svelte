@@ -73,7 +73,7 @@
 	svelte:head
 		title Svelte tutorial completed with Lightning Jar's Svelte Pug Tailwind Typescript stack
 		meta(
-			content="A node starter template for the Svelte, Typescript, TailwindCSS, and Pug stack.",
+			content="A self-contained, exercise-by-exercise demonstration of the tutorial at https://learn.svelte.dev/tutorial/",
 			name="exercises"
 		)
 
