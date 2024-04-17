@@ -3,6 +3,7 @@
 	import ExerciseHeader from "$atoms/ExerciseHeader.svelte";
 	// variables
 	let src = "https://loremflickr.com/640/360";
+	// let src = "src/lib/assets/kitten-problematic-size.jpg";
 </script>
 
 <template lang="pug">
