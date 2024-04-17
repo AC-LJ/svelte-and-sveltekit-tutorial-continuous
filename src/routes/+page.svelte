@@ -2,8 +2,9 @@
 <script lang="ts">
 	// components
 	import ButtonLink from "$atoms/ButtonLink.svelte";
-	import Header from "$components/organisms/Header.svelte";
+	import GlobalHeader from "$components/organisms/GlobalHeader.svelte";
 	import ExerciseContainer from "$components/organisms/ExerciseContainer.svelte";
+	import ViewportTracker from "$components/tools/ViewportTracker.svelte";
 
 	import Exercise1 from "$molecules/Exercise1.svelte";
 	import Exercise2 from "$molecules/Exercise2.svelte";
@@ -40,6 +41,9 @@
 	import Exercise37Thru38 from "$components/molecules/Exercise37Thru38.svelte";
 	import Exercise39 from "$components/molecules/Exercise39.svelte";
 	import Exercise40 from "$components/molecules/Exercise40.svelte";
+
+	// stores
+	import { currentPage } from "$stores/paginationStore";
 
 	// variables
 	const chapters = {
@@ -84,115 +88,122 @@
 		)
 
 	//- body
-	Header
+	ViewportTracker
+	GlobalHeader
 	main
-		.grid.grid-cols-1.gap-5.px-8.py-6.m-auto(
-			class="max-w-[1800px] lg:grid-cols-2 3xl:grid-cols-3"
-		)
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise1
+		.grid.grid-cols-1.gap-5.px-8.py-6.m-auto(class="max-w-[1800px] xl:grid-cols-2")
+			+if('$currentPage === "intro"')
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise1
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise2
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise2
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise3
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise3
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise4
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise4
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise5
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise5
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise6
+			+if('$currentPage === "reactivity"')
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise6
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise7
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise7
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise8
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise8
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise9
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise9
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise10
+			+if('$currentPage === "props"')
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise10
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise11
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise11
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise12
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise12
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise13Thru15
+			+if('$currentPage === "logic"')
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise13Thru15
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise16
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise16
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise17
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise17
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise18
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise18
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise19Thru21
+			+if('$currentPage === "events"')
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise19Thru21
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise22
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise22
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise23
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise23
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise24
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise24
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise25
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise25
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise26
+			+if('$currentPage === "bindings"')
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise26
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise27
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise27
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise28
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise28
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise29
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise29
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise30
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise30
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise30Riff
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise30Riff
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise31
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise31
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise32
+			+if('$currentPage === "lifecycle"')
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise32
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise33
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise33
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise34
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise34
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise35Thru36A
+			+if('$currentPage === "stores"')
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise35Thru36A
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise37Thru38
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise37Thru38
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise39
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise39
 
-			ExerciseContainer(backgroundColor!="{ rotator.next().value }")
-				Exercise40
+				ExerciseContainer(backgroundColor!="{ rotator.next().value }")
+					Exercise40
 
 	footer
 
