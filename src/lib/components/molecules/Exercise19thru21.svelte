@@ -8,11 +8,13 @@
 
 	// functions
 	function handleMove(event: MouseEvent) {
-		if (event.target instanceof HTMLElement) {
+		if (event.currentTarget instanceof HTMLElement) {
 			m.x =
-				event.clientX - Math.round(event.target.getBoundingClientRect().left);
+				event.clientX -
+				Math.round(event.currentTarget.getBoundingClientRect().left);
 			m.y =
-				event.clientY - Math.round(event.target.getBoundingClientRect().top);
+				event.clientY -
+				Math.round(event.currentTarget.getBoundingClientRect().top);
 		}
 	}
 </script>
