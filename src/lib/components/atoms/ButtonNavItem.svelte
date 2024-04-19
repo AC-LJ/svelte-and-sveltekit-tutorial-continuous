@@ -6,13 +6,11 @@
 
 	// stores
 	import { currentPage } from "$stores/paginationStore";
-
-	console.log("ButtonNavItem says: currentPage is", $currentPage);
-	console.log("ButtonNavItem says: page variable value is", page);
 </script>
 
 <template lang="pug">
-	button.h-9.w-24.text-18.border.border-primary(
+	button.h-9.text-18.bg-opacity-20(
+		class="w-[90px] md:w-fit lg:text-20",
 		on:click!="{ onClick }",
-		style!="{ $currentPage === page ? 'font-weight: 700; text-shadow: #93c5fd 1px 0 16px; font-size: 20px;' : 'font-weight: 200;' }"
+		style!="{ $currentPage === page ? 'font-weight: 700; text-shadow: #93c5fd 1px 0 16px; transform: scale(1.15)' : 'font-weight: 200;' }"
 	) { page }</template>
