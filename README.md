@@ -1,11 +1,16 @@
-# Svelte Typescript Tailwind Pug Starter Template
+# Svelte Tutorial Demonstrated
 
-A starter template to help you quickly launch a new project with Svelte / Sveltekit, Typescript, TailwindCSS, Pug. I call it the "Skinnypug" stack.
+A self-contained, exercise-by-exercise demonstration of the tutorial at https://learn.svelte.dev/tutorial/
+
+Made using Lightning Jar's "Skinnypug" development stack, an integration of Svelte, SvelteKit, Pug, Tailwind CSS, and TypeScript at https://github.com/lightning-jar/svelte-typescript-tailwind-pug-starter
+
+The rest of this README is copied from the "Skinnypug" README because it is relevant to understanding the syntax used in this project.
+
 &nbsp;
 
 ## 0. Contents
 
-1. [About this Template](#1-about-this-template)
+1. [Svelte Tutorial Demonstrated](#svelte-tutorial-demonstrated)
 2. [Dependencies](#2-dependencies)
 3. [Getting Started](#3-getting-started)
 4. [About Sveltekit](#4-about-sveltekit)
@@ -16,7 +21,7 @@ A starter template to help you quickly launch a new project with Svelte / Svelte
 9. [Engine & Package Manager](#9-engine--package-manager)
 
 ## 1. About This Template
-This starter was developed for the [Lightning Jar](https://lightningjar.com) team. It's designed to get one up and running quickly on a new project using the core technologies Svelte, Sveltekit, Typescript, TailwindCSS, Pug + a few other bells and whistles ( see the full breakdown below).
+This starter was developed for the [Lightning Jar](https://lightningjar.com) team. It's designed to get one up and running quickly on a new project using the core technologies Svelte, Sveltekit, Typescript, TailwindCSS, Pug + a few other bells and whistles (see the full breakdown below).
 
 ## 2. Dependencies
 
@@ -104,7 +109,7 @@ If you get stuck working with SvelteKit you can reach out for help in the [Svelt
 
 I love Pug, and the first thing I figured out when I started working with Svelte, was how to use Pug inside Svelte files. Thankfully other devs had already solved the technical challenges for me.
 
-This starter uses the [svelte-preprocess](https://github.com/sveltejs/svelte-preprocess) package.It is a Svelte preprocessor with sensible defaults and support for: PostCSS, SCSS, Less, Stylus, CoffeeScript, TypeScript, Pug and much more.
+This starter uses the [svelte-preprocess](https://github.com/sveltejs/svelte-preprocess) package. It is a Svelte preprocessor with sensible defaults and support for: PostCSS, SCSS, Less, Stylus, CoffeeScript, TypeScript, Pug and much more.
 
 **Note: Special syntax is required to write Pug inside Svelte templates.** Some basics are included below. You can learn more [here](https://github.com/sveltejs/svelte-preprocess/blob/HEAD/docs/preprocessing.md#preprocessors).\*\*
 
