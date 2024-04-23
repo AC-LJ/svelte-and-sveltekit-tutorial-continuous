@@ -73,6 +73,7 @@
 			sticky 
 			top-0 
 			z-50
+			md:box-border
 			md:px-8 
 			`
 	)
@@ -105,7 +106,7 @@
 					)
 						SvgHamburger
 					+else
-						.right-fly-panel.absolute.mx-8.flex(
+						.right-fly-panel.absolute.mx-8.flex.max-w-xl(
 							transition:fly!="{{ x: 500, duration: 700 }}"
 						)
 							.h-24.flex.flex-wrap.justify-center.pt-1
@@ -117,6 +118,7 @@
 
 							.relative.w-10.shrink-0
 								button.absolute.top-3.right-0.flex.items-center.justify-center.h-7.w-7.p-1.border.border-primary.rounded-lg(
+									class="transition-colors duration-200 ease-in-out hover:bg-primary hover:bg-opacity-40"
 									on:click!="{ () => ($mobileNavIsOpen = false) }"
 								) 
 									SvgCloseSymbol
