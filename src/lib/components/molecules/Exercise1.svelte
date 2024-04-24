@@ -4,7 +4,7 @@
 
 	// variables
 	let content =
-		"This string is defined in a variable and passed to an <p> element in the template.";
+		"This string is defined in a variable and passed to a <p> element in the template.";
 </script>
 
 <template lang="pug">

@@ -10,37 +10,23 @@
 		topic="Styling"
 	)
 
-	p The styles applied to these paragraphs are scoped to this component only.
-	p It must be the case that TW classes are applied before traditionally declared styles because they cannot be used to override same.
-	p(class="override") This paragraph is unaffected due to an "override" class selector included in the style element.</template>
+	p The style rules applied to this paragraph are declared in a style element inside this component, and thus are scoped to this component (exercise3.svelte) only.
+	p.bg-yellow-400.mt-4
+		| Because Tailwind declares its style rules in a &lt;style&gt; element in the document head,
+		| any conflicting style rules declared in the &lt;style&gt; element added to this component come later in order of appearance
+		| and will override theTailwind utility class styles. But we can still use Tailwind classes to color the background of this paragraph
+		| and add a margin-top value because our component-scoped styles don't include any declarations about the background or margins.
+
+	.text-20.mt-4.max-w-3xl
+		| This text, on the other hand, has only Tailwind styling because it is just inside a &lt;div&gt;,
+		| and is, therefore, not affected by our paragraph rules.</template>
 
 <style>
 	p {
-		color: darkred;
+		color: #550055;
 		font-family: "Comic Sans MS", cursive;
-		font-size: 2em;
-		padding: 0.5em 0;
+		font-size: 1.5em;
+		padding: 0.25em 0.5em;
 		max-width: 50ch;
-	}
-
-	.override {
-		color: black;
-		font-family:
-			ui-sans-serif,
-			system-ui,
-			-apple-system,
-			BlinkMacSystemFont,
-			"Segoe UI",
-			Roboto,
-			"Helvetica Neue",
-			Arial,
-			"Noto Sans",
-			sans-serif,
-			"Apple Color Emoji",
-			"Segoe UI Emoji",
-			"Segoe UI Symbol",
-			"Noto Color Emoji";
-		font-size: 20px;
-		font-weight: 600;
 	}
 </style>

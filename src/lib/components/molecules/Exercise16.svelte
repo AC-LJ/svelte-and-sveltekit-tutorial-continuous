@@ -9,9 +9,9 @@
 		"orange",
 		"yellow",
 		"green",
-		"blue",
-		"indigo",
-		"violet",
+		"royalblue",
+		"slateblue",
+		"rebeccapurple",
 	];
 
 	let selected = colors[0];
@@ -30,7 +30,7 @@
 			button(
 				aria-label!="{ color }",
 				aria-current!="{ selected === color }",
-				style!="{`background-color: ${color}; color: ${['yellow', 'orange', 'violet'].includes(color) ? 'black' : 'white'}; transform: translate(-4px, -4px);`}",
+				style!="{`background-color: ${color}; color: ${['yellow', 'orange'].includes(color) ? 'black' : 'white'}; transform: translate(-4px, -4px);`}",
 				on:click!="{ () => selected = color}",
 			) { i + 1 }
 </template>
@@ -41,7 +41,7 @@
 		border-radius: 50%;
 		background: var(--color, #fff);
 		transform: translate(-2px, -2px);
-		filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
+		filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
 		transition: all 0.1s;
 	}
 

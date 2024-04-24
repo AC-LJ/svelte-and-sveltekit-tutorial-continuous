@@ -9,7 +9,14 @@
 	// functions
 	function passMessage() {
 		dispatch("message", {
-			text: "This message was sent from a grandchild component to a child component, and forwarded from the child component to the parent component. Wait until we get to the part about Svelte stores...",
+			text: `
+This message was sent from a grandchild component to a child component, and forwarded from the child \
+component to the parent component. 
+
+There's probably a use case where this is a good way to do this, \
+but it's significantly more complicated to implement, and less flexible, than a Svelte store, where you \
+can assign variables that can be accessed by any component that imports the store. \
+`,
 		});
 	}
 </script>
