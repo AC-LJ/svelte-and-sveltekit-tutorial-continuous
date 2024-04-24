@@ -41,7 +41,7 @@
 		topic="beforeUpdate and afterUpdate"
 	)
 
-	textarea.mt-6.p-4.w-full.h-40.rounded-lg.resize-none(
+	textarea.mt-6.p-4.w-full.h-44.rounded-lg.resize-none(
 		on:keydown!="{ handleKeydown }",
 		value!="{ text }"
 	)</template>
