@@ -17,7 +17,7 @@
 
 	// variables
 	// let flavours: string[] = [];
-	let runningYOffset = 88;
+	let runningYOffset = 150;
 	let coneYOffset = runningYOffset + 38;
 	let offsetCopy = runningYOffset;
 	let selections: SelectionDetails[] = [];
@@ -171,7 +171,7 @@
 	ExerciseHeader(
 		section="Riff on exercises 29 and 30",
 		startNumber=30.5,
-		topic="Build your cone!"
+		topic="Build your cone! (Makes no use of bindings, but it IS fun)"
 	)
 
 	.container.relative
@@ -200,9 +200,8 @@
 						onClick!="{ addScoop }"
 					)
 
-			.order-fulfilled.bg-white.bg-opacity-75.rounded-lg.flex.flex-col.items-center.relative
+			.order-filled.bg-white.bg-opacity-75.rounded-lg.flex.flex-col.items-center.relative
 				+each('selections as selection')
-					//- .box.h-12.w-12.bg-red-600.bg-opacity-20
 					Ex30RiffScoop(
 						flavourSelect!="{ selection.scoopType }",
 						rotation!="{ selection.rotation }",
@@ -211,18 +210,15 @@
 					)
 				Ex30RiffCone(topOffset!="{ coneYOffset }")
 
+			.h-44.col-span-2.flex.flex-col.items-center.justify-center
 				+if('selections.length > 0')
-					.absolute.bottom-16.bg-red.h-12.flex.flex-col.z-50.text-16.font-semibold
-						+if('!isToppled')
-							ButtonEat(
-								buttonImage!="{ eatImage }",
-								onClick!="{ eat }"
-							) Eat it!
-							+else
-								ButtonEat(
-									buttonImage!="{ eatImage }",
-									onClick!="{ eat }"
-								) IT'S STILL GOOD!</template>
+					ButtonEat(
+						buttonImage!="{ eatImage }",
+						onClick!="{ eat }"
+					) 
+					p.neon.text-24.text-white.mt-2.text-50.font-bold.-translate-y-1(
+						class="font-[neonderthawregular]"
+					) {  `${isToppled ? "It's still good!" : "Eat it!"  }`}</template>
 
 <style lang="css">
 	.front-plate {
@@ -234,5 +230,12 @@
 		box-shadow:
 			0 3px 0 #858787,
 			-3px 8px 8px rgba(0, 0, 0, 0.45);
+	}
+
+	.neon {
+		text-shadow:
+			rgb(210, 13, 210) 2px 1px 36px,
+			purple 2px 1px 24px,
+			indigo 2px 1px 8px;
 	}
 </style>

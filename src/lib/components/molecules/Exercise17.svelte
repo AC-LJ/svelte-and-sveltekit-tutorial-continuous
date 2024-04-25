@@ -50,7 +50,7 @@
 
 	.button-grid.grid.grid-cols-2.gap-4.mt-6.max-w-md
 		ButtonGeneric1(onClick!="{ handleClick }")
-			p Remove the first thing
+			p Remove top item
 
 		ButtonGeneric1(onClick!="{ reset }")
 			p Reset
