@@ -17,7 +17,7 @@
 		| and will override theTailwind utility class styles. But we can still use Tailwind classes to color the background of this paragraph
 		| and add a margin-top value because our component-scoped styles don't include any declarations about the background or margins.
 
-	.text-20.mt-4.max-w-3xl
+	.text-20.mt-4.px-2.max-w-3xl
 		| This text, on the other hand, has only Tailwind styling because it is just inside a &lt;div&gt;,
 		| and is, therefore, not affected by our paragraph rules.</template>
 
@@ -26,7 +26,7 @@
 		color: #550055;
 		font-family: "Comic Sans MS", cursive;
 		font-size: 1.5em;
-		padding: 0.25em 0.5em;
+		padding: 8px 0.5em;
 		max-width: 50ch;
 	}
 </style>

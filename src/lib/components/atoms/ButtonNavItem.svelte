@@ -1,3 +1,9 @@
+<!--
+@component
+The nav button that allows the user to go to any given section of the tutorial.
+* prop page: string  -- the name of the section to navigate to
+* prop onClick: the function that changes the current page to the one specified in the page prop
+-->
 <script lang="ts">
 	// props
 	export let page = "";
@@ -9,8 +15,18 @@
 </script>
 
 <template lang="pug">
-	button.nav-button.text-18(
-		class="w-[90px] md:w-fit lg:text-20 bg-transparent rounded-lg transition-colors duration-200 ease-in-out",
+	button.nav-button(
+		class=`
+			bg-transparent
+			duration-200 ease-in-out
+			rounded-lg
+			text-18
+			transition-colors
+			w-[90px]
+
+			md:w-fit 
+			lg:text-20 
+		`,
 		aria-current!="{ $currentPage === page }",
 		on:click!="{ onClick }"
 	) { page }</template>

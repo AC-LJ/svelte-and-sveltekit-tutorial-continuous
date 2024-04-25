@@ -77,15 +77,25 @@
 			md:px-8 
 			`
 	)
+		//- if the viewport is 768px or wider, show the desktop nav
 		+if('["desktop", "grid-cols-2"].includes($pageMode)')
-			button.flex.justify-center.items-center(
+			button.move-topic-selection-left(
+				class=`
+						flex
+						items-center
+						justify-center
+				`
 				on:click!="{ previous }",
 				style!="{ selectedIndex > 0 ? '' : 'visibility: hidden;' }"
 			)
 				SvgSectionSelect(direction="left")
 
 			+each('basicSectionTitles as page')
-				.flex.justify-center(
+				.topic-button-container(
+					class=`
+							flex
+							justify-center
+					`
 					style!="{`width: ${page.length * 6 + 44}px`}"
 				)
 					ButtonNavItem(
@@ -93,32 +103,94 @@
 						page!="{ page }"
 					)
 
-			button.flex.justify-center.items-center(
+			button.move-topic-selection-right(
+				class=`
+						flex
+						items-center
+						justify-center
+				`
 				on:click!="{ next }",
 				style!="{ selectedIndex < basicSectionTitles.length - 1 ? '' : 'visibility: hidden;' }"
 			)
 				SvgSectionSelect(direction="right")
+
+			//- if the viewport is less than 768px...
 			+else
 				+if('!$mobileNavIsOpen')
-					button.absolute.left-8.flex.justify-center.items-center.p-3.border.border-primary.rounded-lg(
+					button.menu-opener(
+						class=`
+								absolute
+								border
+								border-primary
+								flex
+								items-center
+								justify-center
+								left-8
+								p-3
+								rounded-lg
+
+								md:hidden
+						`
 						on:click!="{ () => toggleNav() }",
 						transition:fly!="{{ x: -500, duration: 500 }}"
 					)
 						SvgHamburger
 					+else
-						.right-fly-panel.absolute.mx-8.flex.max-w-xl(
+						.fly-in-menu-container(
+							class=`
+									absolute
+									flex
+									max-w-xl
+									mx-8
+
+									md:hidden
+							`
 							transition:fly!="{{ x: 500, duration: 700 }}"
 						)
-							.h-24.flex.flex-wrap.justify-center.pt-1
+							.topic-buttons-group-container(
+								class=`
+										flex
+										flex-wrap
+										h-24
+										justify-center
+										pt-1
+								`
+								)
 								+each('basicSectionTitles as page')
 									ButtonNavItem(
 										onClick!="{ () => handlePageButtonClick(page) }",
 										page!="{ page }"
 									)
 
-							.relative.w-10.shrink-0
-								button.absolute.top-3.right-0.flex.items-center.justify-center.h-7.w-7.p-1.border.border-primary.rounded-lg(
-									class="transition-colors duration-200 ease-in-out hover:bg-primary hover:bg-opacity-40"
+							.menu-closer-container(
+								class=`
+										relative
+										shrink-0
+										w-10
+								`
+								)
+								button.menu-closer(
+									class=`
+											absolute
+											border
+											border-primary
+											flex
+											h-7
+											items-center
+											justify-center
+											p-1
+											right-0
+											rounded-lg
+											top-3
+											w-7
+
+									 		transition-colors 
+											duration-200 
+											ease-in-out 
+											
+											hover:bg-primary 
+											hover:bg-opacity-40
+									`
 									on:click!="{ () => ($mobileNavIsOpen = false) }"
 								) 
 									SvgCloseSymbol

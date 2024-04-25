@@ -1,7 +1,11 @@
+<!--
+@component
+The basic, reusable button that appears in many of the exercises.
+* onClick: function  -- the function that does whatever the button is supposed to do when activated.
+-->
 <script lang="ts">
 	// props
 	export let onClick: () => void;
-	// export let buttonContent = "";
 </script>
 
 <template lang="pug">

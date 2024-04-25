@@ -1,3 +1,8 @@
+<!--
+@component
+An invisible, out-of-flow DOM element that listens to the viewport width and relays it to the viewport store.
+-->
+
 <script lang="ts">
 	// Svelte directives
 	import { onMount, onDestroy } from "svelte";
@@ -24,4 +29,14 @@
 </script>
 
 <template lang="pug">
-	.absolute.top-0.left-0.w-full.pointer-events-none.select-none.hidden &nbsp;</template>
+	.viewport-tracker(
+		class=`
+			absolute
+			hidden
+			left-0
+			pointer-events-none
+			select-none
+			top-0
+			w-full
+		`
+	) &nbsp;</template>

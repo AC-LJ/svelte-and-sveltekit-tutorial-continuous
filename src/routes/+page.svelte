@@ -1,7 +1,6 @@
 <!-- Example Svelte Page / Starter Web Page-->
 <script lang="ts">
 	// components
-	import ButtonLink from "$atoms/ButtonLink.svelte";
 	import GlobalHeader from "$components/organisms/GlobalHeader.svelte";
 	import ExerciseContainer from "$components/organisms/ExerciseContainer.svelte";
 	import ViewportTracker from "$components/tools/ViewportTracker.svelte";

@@ -9,8 +9,6 @@
 	// stores
 	import { hornMp3 } from "$lib/stores/mp3Store";
 
-	// resolving TypeScript hassles with the audio API
-
 	// variables
 
 	let audio: HTMLAudioElement;
@@ -19,10 +17,6 @@
 		audio = new Audio();
 		audio.src = `data:audio/mpeg;base64,${$hornMp3}`;
 	});
-
-	// const audio = new Audio();
-	// audio.src = `data:audio/mpeg;base64,//${hornMp3}`;
-	// console.log("first 100 characters of 'audio.src'", audio.src.slice(100));
 
 	// functions
 	function honkHandler() {

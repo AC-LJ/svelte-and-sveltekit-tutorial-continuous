@@ -3,7 +3,20 @@
 </script>
 
 <template lang="pug">
-	.exercise-container.text-eerie.bg-opacity-40.border.border-neutral-400.rounded-xl.shadow-lg.flex.flex-col.min-h-24.py-6.px-7(
+	.exercise-container(
+		class=`
+				bg-opacity-40
+				border
+				border-neutral-400
+				flex
+				flex-col
+				min-h-24
+				px-7
+				py-6
+				rounded-xl
+				shadow-lg
+				text-eerie
+		`,
 		class!="{ backgroundColor }"
 	)
 		slot</template>

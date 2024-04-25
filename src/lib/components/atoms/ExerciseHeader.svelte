@@ -1,3 +1,8 @@
+<!--
+@component
+The header inside each exercise, displaying the exercise number, section, and topic.
+The code is sufficiently self-explanatory that any further documentation would amount to clutter.
+-->
 <script lang="ts">
 	export let startNumber: number;
 	export let endNumber = startNumber;
@@ -12,6 +17,13 @@
 </script>
 
 <template lang="pug">
-	h2 { makeExerciseNumberString(startNumber, endNumber) }
-	.headline.text-20.font-semibold.ml-4.mt-1
-		p.py-1 { section } / { topic }</template>
+	h3.exercise-number { makeExerciseNumberString(startNumber, endNumber) }
+	h4.section-and-topic-announcement(
+		class=`
+			font-semibold
+			ml-4
+			mt-1
+			py-1
+			text-20
+		`
+	) { section } / { topic }</template>

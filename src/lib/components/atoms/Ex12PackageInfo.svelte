@@ -1,3 +1,8 @@
+<!--
+@component
+Accepts props from Exercise12.svelte and displays information about a package.
+The code is sufficiently self-explanatory that any further documentation would amount to clutter.
+-->
 <script lang="ts">
 	// props
 	export let name: string;
@@ -12,7 +17,16 @@
 </script>
 
 <template lang="pug">
-	.demo-container.mt-6.p-6.bg-white.rounded-lg.w-fit.bg-opacity-70
+	.package-info-container(
+		class=`
+			bg-opacity-70
+			bg-white
+			mt-6
+			p-6
+			rounded-lg
+			w-fit
+		`
+	)
 		p
 		| The
 		code &nbsp;{ name }&nbsp;

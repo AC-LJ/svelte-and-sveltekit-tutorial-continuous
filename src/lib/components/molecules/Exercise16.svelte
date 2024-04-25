@@ -1,7 +1,6 @@
 <script lang="ts">
 	// components
 	import ExerciseHeader from "$atoms/ExerciseHeader.svelte";
-	import ButtonCustomizable1 from "$atoms/ButtonCustomizable1.svelte";
 
 	// variables
 	const colors = [
