@@ -1,6 +1,6 @@
 <!--
 @component
-Called by Ex17.svelte to render emoji's by name. The underlying reason it is built this way is a little complicated, 
+Called by Exercise17.svelte to render emoji's by name. The underlying reason it is built this way is a little complicated, 
 and it is probably best to study the exercise at https://learn.svelte.dev/tutorial/keyed-each-blocks to understand.
 * prop name: keyof EmojiObject -- the name of the emoji to render
 -->
@@ -11,6 +11,10 @@ and it is probably best to study the exercise at https://learn.svelte.dev/tutori
 		[key: string]: string;
 	};
 
+	// props
+	// the name is updated whenever the prop value changes...
+	export let name: keyof EmojiObject;
+
 	// variables
 
 	const emojis: EmojiObject = {
@@ -20,11 +24,6 @@ and it is probably best to study the exercise at https://learn.svelte.dev/tutori
 		doughnut: "🍩",
 		egg: "🥚",
 	};
-
-	// props
-
-	// the name is updated whenever the prop value changes...
-	export let name: keyof EmojiObject;
 
 	// ...but the "emoji" variable is fixed upon initialization
 	// of the component because it uses `const` instead of `$:`

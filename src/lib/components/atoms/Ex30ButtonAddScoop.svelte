@@ -19,26 +19,24 @@
 				border-2
 				border-neutral-700
 				border-opacity-30
-				duration-200
-				hover:bg-opacity-100
-				py-1
-				px-2
-				sm:px-3
-				sm:py-2
-				md:px-3
-				md:py-3
-				lg:py-1
-				lg:px-2
+				font-bold
+				max-w-[120px]
+				py-2
+				px-3
 				rounded-lg
-				transition
+				text-14
+				text-white
 				uppercase
 				w-full
-				text-12
-				font-bold
-				text-white
-				max-w-[120px]
+
+				hover:bg-opacity-100
+
 				md:max-w-[160px]
-				lg:max-w-[120px]
+				md:px-3
+				md:py-3
+
+				transition
+				duration-200
 				`,
 		id!="{ `ice-cream-button-${choice}` }",
 		on:click!="{ onClick }"

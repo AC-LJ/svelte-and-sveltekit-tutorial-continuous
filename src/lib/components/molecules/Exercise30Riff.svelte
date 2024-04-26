@@ -2,10 +2,11 @@
 	// components
 	import ExerciseHeader from "$atoms/ExerciseHeader.svelte";
 	import ButtonGeneric1 from "$atoms/ButtonGeneric1.svelte";
-	import ButtonAddScoop from "$atoms/Ex30ButtonIceAddScoop.svelte";
+	import ButtonAddScoop from "$atoms/Ex30ButtonAddScoop.svelte";
 	import Ex30RiffScoop from "$atoms/Ex30RiffScoop.svelte";
 	import Ex30RiffCone from "$atoms/Ex30RiffCone.svelte";
 	import ButtonEat from "$atoms/Ex30ButtonEat.svelte";
+	import EditorsNote from "$atoms/EditorsNote.svelte";
 
 	// types
 	interface SelectionDetails {
@@ -171,18 +172,62 @@
 	ExerciseHeader(
 		section="Riff on exercises 29 and 30",
 		startNumber=30.5,
-		topic="Build your cone! (Makes no use of bindings, but it IS fun)"
+		topic="Build your cone!"
 	)
 
-	.container.relative
+	.all-features-outer-container.relative
+		EditorsNote(
+			noteContent="This extracurricular makes no use of bindings, but it is fun."
+		)
 		+if('isToppled')
-			.absolute.w-full.h-full.flex.justify-center.pt-24.pl-12
-				p.text-50.font-bold.text-engineering(class="rotate-[-12deg] z-40") YOU BOOB!
+			.topple-message-container(
+				class=`
+					absolute
+					flex
+					h-96
+					justify-center
+					pl-12
+					pt-24
+					w-full
+					`
+			)
+				p.topple-message(
+					class=`
+						font-bold
+						rotate-[-12deg]
+						text-50
+						text-engineering
+						z-40
+						`
+				) YOU BOOB!
 
-		.scoop-selector-panel.grid.grid-cols-2.gap-6.mt-6
-			.front-plate.h-96.rounded-lg.flex.flex-col.items-center.justify-around.px-6.py-4
+		.all-features-inner-container(class=`
+				gap-6
+				grid
+				grid-cols-2
+				mt-6
+				`)
+			.front-plate(
+				class=`
+					flex
+					flex-col
+					h-96
+					items-center
+					justify-around
+					px-6
+					py-4
+					rounded-lg
+					`
+			)
 				+if('!isToppled')
-					.rounded-xl.text-center.text-gray-900.font-semibold
+					.cone-control-panel(
+						class=`
+							font-semibold
+							rounded-xl
+							text-center
+							text-gray-900
+							`
+					)
 						p.text-20 SCOOP
 						p -O-
 						p.text-20 MATIC
@@ -200,7 +245,17 @@
 						onClick!="{ addScoop }"
 					)
 
-			.order-filled.bg-white.bg-opacity-75.rounded-lg.flex.flex-col.items-center.relative
+			.order-display(
+				class=`
+					bg-opacity-75
+					bg-white
+					flex
+					flex-col
+					items-center
+					relative
+					rounded-lg
+					`
+			)
 				+each('selections as selection')
 					Ex30RiffScoop(
 						flavourSelect!="{ selection.scoopType }",
@@ -210,14 +265,31 @@
 					)
 				Ex30RiffCone(topOffset!="{ coneYOffset }")
 
-			.h-44.col-span-2.flex.flex-col.items-center.justify-center
+			.bottom-container(
+				class=`
+					col-span-2
+					flex
+					flex-col
+					h-44
+					items-center
+					justify-center
+					`
+			)
 				+if('selections.length > 0')
 					ButtonEat(
 						buttonImage!="{ eatImage }",
 						onClick!="{ eat }"
 					) 
-					p.neon.text-24.text-white.mt-2.text-50.font-bold.-translate-y-1(
-						class="font-[neonderthawregular]"
+					p.neon-text(
+						class=`
+							-translate-y-1
+							font-bold
+							font-[neonderthawregular]
+							mt-2
+							text-24
+							text-50
+							text-white
+							`
 					) {  `${isToppled ? "It's still good!" : "Eat it!"  }`}</template>
 
 <style lang="css">
@@ -232,7 +304,7 @@
 			-3px 8px 8px rgba(0, 0, 0, 0.45);
 	}
 
-	.neon {
+	.neon-text {
 		text-shadow:
 			rgb(210, 13, 210) 2px 1px 36px,
 			purple 2px 1px 24px,
